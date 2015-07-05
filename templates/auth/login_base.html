@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    {% load bootstrap3 %}
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+
+
+
+    <link rel="stylesheet" media="screen" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-responsive.min.css" %}">
+    <script src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+    <title>{% block title %}Projekt Verwaltung
+        {% endblock %}</title>
+
+ <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+
+
+		</div>
+		<!-- Textueller Inhalt -->
+
+		<div id="page">
+
+
+			<div id="login">
+
+
+            {% block content %}Content{% endblock %}
+
+			</div>
+
+		</div>
+		<div id="footer">&copy; 2014 by Ganna Demydova. All rights reserved.</div>
+
+	</div>
+</body>
+</html>

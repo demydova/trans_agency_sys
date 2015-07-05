@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    {% load bootstrap3 %}
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+
+
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-responsive.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/jquery.dataTables.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/jquery.dataTables.min.css" %}">
+    <script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
+    <script src="{% static "js/jquery.dataTables.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+    <title>{% block title %}Projekt Verwaltung
+        {% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+            <div id="logo">
+                <script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
+                 <div id="ad" class="platzhalter">
+                        <img src="{% static "bilder/ada.png" %}"height="75" alt="">
+                    </div>
+                    <div class="logo_top platzhalter">
+                        <img src="{% static "bilder/e.png"%}"height="75" alt="">
+                    </div>
+                    <div class="logo_top platzhalter">
+                        <img src="{% static "bilder/s.png"%}"height="75" alt="">
+                    </div>
+                    <div class="logo_top platzhalter">
+                        <img src="{% static "bilder/i.png"%}"height="75" alt="">
+                    </div>
+                    <div class="logo_top platzhalter">
+                        <img src="{% static "bilder/g.png"%}"height="75" alt="">
+                    </div>
+                    <div class="logo_top platzhalter">
+                        <img src="{% static "bilder/n.png"%}"height="75" alt="">
+                    </div>
+                    <div id="a" class="platzhalter">A</div>
+                    <div class="logo_down platzhalter">N</div>
+                    <div class="logo_down platzhalter">N</div>
+                    <div class="logo_down platzhalter">A</div>
+                    <div class="logo_down platzhalter">&nbsp;</div>
+                    <div class="logo_down platzhalter">D</div>
+                    <div class="logo_down platzhalter">E</div>
+                    <div class="logo_down platzhalter">M</div>
+                    <div class="logo_down platzhalter">Y</div>
+                    <div class="logo_down platzhalter">D</div>
+                    <div class="logo_down platzhalter">O</div>
+                    <div class="logo_down platzhalter">V</div>
+                    <div class="logo_down platzhalter">A</div>
+
+            </div>
+
+
+            <div id="menu_v">
+
+
+                    <ul >
+                    <li ><a href="{% url 'projects_actual' %}">Actual</a></li>
+                    <li ><a href="{% url 'projectslist' %}">Projects</a></li>
+                     <li ><a href="{% url 'clientslist' %}">Clients</a></li>
+                    <li ><a href="{% url 'translatorslist' %}">Translators</a></li>
+                    </ul>
+
+            </div>
+        </div>
+        </header>
+		</div>
+
+
+		<!-- Textueller Inhalt -->
+
+		<div id="page">
+			<div id="sidebar3">
+				<!--                <article id="tbox1">-->
+				<div id="menu">
+					<ul>
+						<li><a href="{% url 'addClient' %}" >Add new Client</a></li>
+						<li><a href="{% url 'addTranslator'  %}">Add new Translator</a></li>
+
+							<li><a href="{% url 'addProject'  %}">Add new Project</a></li>
+
+						<li><a href="/auth/logout/">Log out</a></li>
+
+					</ul>
+				</div>
+
+				<!--</article>-->
+			</div>
+
+			<div id="content">
+
+
+            <div id="content-head">
+			<h1>{{ page_title }}</h1>
+            {% bootstrap_messages %}
+
+            </div>
+            {% block content %}Content{% endblock %}
+
+			</div>
+
+		</div>
+		<div id="footer">&copy; 2014 by Ganna Demydova. All rights reserved.</div>
+
+	</div>
+
+
+
+    <script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
+    <script src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+    <script src="{% static "js/jquery.dataTables.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/logo.js" %}"></script>
+
+    <script>
+        $(document).ready(function(){
+        var url = window.location.href;
+            $("a").each(function() {
+                // checks if its the same on the address bar
+                if(url.indexOf(this.href) > -1) {
+                $(this).css("color", "#FFBF00");
+                }
+});
+});
+    </script>
+
+</body>
+</html>

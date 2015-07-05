@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <form action='' enctype="multipart/form-data" method="post" class="form-horizontal">
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal'%}
+         <div class="button"><button type="submit" class="button-style">Submit</button></div>
+    </form>
+    <script>
+            $(document).ready(function(){
+        $('#TableActual').dataTable();
+            $("input[name='pages_number'],input[name='page_rate']").keyup(function() {
+                if ($("#id_pages_number").val()!='' && $("#id_page_rate").val()!='')
+                {$("#id_price").val($("#id_pages_number").val()*$("#id_page_rate").val());}
+            });
+
+         });
+    </script>
+{% endblock %}
